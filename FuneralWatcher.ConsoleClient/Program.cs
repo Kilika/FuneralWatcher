@@ -1,11 +1,11 @@
-﻿using FuneralWatcher.Logging.ConsoleLogger;
+﻿using FuneralWatcher.Configuration;
+using FuneralWatcher.Logging.ConsoleLogger;
 using FuneralWatcher.Logging.Contract;
 using FuneralWatcher.Logic;
 using FuneralWatcher.Logic.Contract;
 using FuneralWatcher.Logic.ImageProcessor;
 using FuneralWatcher.Logic.TessImageInterpreter;
 using FuneralWatcher.Logic.WindowsScreenCastImageProvider;
-using FuneralWatcher.Settings;
 using FuneralWatcher.Workflows;
 using Ninject;
 

@@ -26,6 +26,5 @@ public sealed class TessImageInterpreter : IImageInterpreter
             _logger.Log($"Read img: {reading}, " + (res ? "found pattern" : "dont found pattern"));
             return res;
         }
-        return false;
     }
 }

@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FuneralWatcher.Settings\FuneralWatcher.Settings.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Configuration\FuneralWatcher.Configuration.csproj" />
     </ItemGroup>
 
 </Project>

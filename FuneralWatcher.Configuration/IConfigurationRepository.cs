@@ -1,4 +1,4 @@
-﻿namespace FuneralWatcher.Settings;
+﻿namespace FuneralWatcher.Configuration;
 
 public interface IConfigurationRepository
 {

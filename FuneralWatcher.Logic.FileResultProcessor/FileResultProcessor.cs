@@ -1,24 +1,25 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO.Enumeration;
+using FuneralWatcher.Configuration;
 using FuneralWatcher.Logging.Contract;
 using Microsoft.VisualBasic.CompilerServices;
 using FuneralWatcher.Logic.Contract;
-using FuneralWatcher.Settings;
 
 namespace FuneralWatcher.Logic;
 
 public class FileResultProcessor : IResultProcessor
 {
     private string _file;
-    private string _resultDir = "Result\\";
+    private string _resultDir;
 
     private ILogger _logger;
     private int _deathCounter = 0;
 
     public FileResultProcessor(ILogger logger, IConfiguration config)
     {
-        var fileName = config.Get("ImageSettings", "CounterFileName", "MyDeaths.txt");
+        var fileName = config.Get(ConfigurationCategories.ImageSettings, ConfigurationKeys.CounterFileName, "MyDeaths.txt");
+        _resultDir = config.Get(ConfigurationCategories.ImageSettings, ConfigurationKeys.ResultPath, "Result\\");
         _logger = logger;
         _file = string.Concat(_resultDir, fileName);
         

@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.Contra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.ConsoleClient", "FuneralWatcher.ConsoleClient\FuneralWatcher.ConsoleClient.csproj", "{81207BE1-8C14-4CC4-8311-7B49268E9B33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Settings", "FuneralWatcher.Settings\FuneralWatcher.Settings.csproj", "{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Configuration", "FuneralWatcher.Configuration\FuneralWatcher.Configuration.csproj", "{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuneralWatcher.Logic", "FuneralWatcher.Logic", "{A15CAD58-0929-422D-82CE-9EBA3FBDD236}"
 EndProject
@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logging.Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.WindowsScreenCastImageProvider", "FuneralWatcher.Logic.WindowsScreenCastImageProvider\FuneralWatcher.Logic.WindowsScreenCastImageProvider.csproj", "{EB86DBC7-773E-45D4-8A6A-20351B314682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.OpenCvImageInterpretter", "FuneralWatcher.Logic.OpenCvImageInterpretter\FuneralWatcher.Logic.OpenCvImageInterpretter.csproj", "{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.EmguImageInterpreter", "FuneralWatcher.Logic.EmguImageInterpreter\FuneralWatcher.Logic.EmguImageInterpreter.csproj", "{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

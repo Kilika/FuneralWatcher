@@ -17,7 +17,7 @@
       <ProjectReference Include="..\FuneralWatcher.Logic.ImageProcessor\FuneralWatcher.Logic.ImageProcessor.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic.TessImageInterpreter\FuneralWatcher.Logic.TessImageInterpreter.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic.WindowsScreenCastImageProvider\FuneralWatcher.Logic.WindowsScreenCastImageProvider.csproj" />
-      <ProjectReference Include="..\FuneralWatcher.Settings\FuneralWatcher.Settings.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Configuration\FuneralWatcher.Configuration.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Workflows\FuneralWatcher.Workflows.csproj" />
     </ItemGroup>
 

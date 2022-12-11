@@ -4,6 +4,7 @@ using FuneralWatcher.Logic.Contract;
 
 namespace FuneralWatcher.Logic.ImageProcessor;
 
+#pragma warning disable CA1416
 public sealed class ImageProcessor : IImageProcessor
 {
     private Rectangle _calculatedRectangle;
@@ -44,3 +45,4 @@ public sealed class ImageProcessor : IImageProcessor
         return new Rectangle(corner, size);
     }
 }
+#pragma warning restore CA1416

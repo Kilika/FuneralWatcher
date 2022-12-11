@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
+using FuneralWatcher.Configuration;
 using FuneralWatcher.CrossCutting;
 using FuneralWatcher.Logic.Contract;
-using FuneralWatcher.Settings;
 
 namespace FuneralWatcher.Workflows
 {
@@ -37,18 +37,25 @@ namespace FuneralWatcher.Workflows
 
         public async Task Run()
         {
-            CancellationToken cancelToken = new CancellationToken();
-            while (!cancelToken.IsCancellationRequested)
+            //CancellationToken cancelToken = new CancellationToken();
+            while (true)
             {
-                var image = _imageProvider.GetImage();
-                var cropped = _imageProcessor.GetCroppedImage(image);
-                var found = _imageInterpreter.ImageContainsPattern(cropped, _searchPattern);
-                
-                if (_found != found)
+                try
                 {
-                    _found = found;
-                    PatternMatchingFlankDetected?.Invoke(this, new FlankChangeDetected(found));
+                    var image = _imageProvider.GetImage();
+                    var cropped = _imageProcessor.GetCroppedImage(image);
+                    var found = _imageInterpreter.ImageContainsPattern(cropped, _searchPattern);
+                    if (_found != found)
+                    {
+                        _found = found;
+                        PatternMatchingFlankDetected?.Invoke(this, new FlankChangeDetected(found));
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                
                 Thread.Sleep(_scanInterval);
             }
         }

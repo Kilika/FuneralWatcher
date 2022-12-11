@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace FuneralWatcher.Settings;
+﻿namespace FuneralWatcher.Configuration;
 
 public class Configuration : IConfiguration
 {
