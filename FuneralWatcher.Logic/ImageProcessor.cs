@@ -18,9 +18,10 @@ public sealed class ImageProcessor : IImageProcessor
     private Image Crop(Image img, Rectangle croppingArea)
     {
         var toCrop = new Bitmap(img).Clone(croppingArea, img.PixelFormat);
-        
         var g = Graphics.FromImage(img);
         g.DrawRectangle(Pens.Aqua, croppingArea);
+        if (!Directory.Exists("Result"))
+            Directory.CreateDirectory("Result");
         img.Save("Result//LastImage.png");
 
         return toCrop;

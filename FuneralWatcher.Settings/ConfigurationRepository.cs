@@ -6,7 +6,8 @@ public class ConfigurationRepository : IConfigurationRepository
     {
         new ConfigEntry { Category = "Logging", Key = "Level", Value = "Debug" },
         new ConfigEntry { Category = "ImageSettings", Key = "CounterFileName", Value = "MyDeaths.txt" },
-        new ConfigEntry { Category = "ImageSettings", Key = "ScreenshotInterval", Value = 2000}
+        new ConfigEntry { Category = "ImageSettings", Key = "ScreenshotInterval", Value = 2000},
+        new ConfigEntry { Category = "ImageSettings", Key = "Pattern", Value = "YOU DIED" }
     };
 
     public void Save(IEnumerable<ConfigEntry> entriesToStore)

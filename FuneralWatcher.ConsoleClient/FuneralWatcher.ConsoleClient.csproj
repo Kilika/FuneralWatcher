@@ -19,20 +19,20 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="SampleData" />
+      <Folder Include="Data" />
     </ItemGroup>
 
     <ItemGroup>
       <None Update="SampleData\sample_00.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
       <None Update="SampleData\sample_01.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
       <None Update="SampleData\sample_02.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
-      <None Update="tessdata\eng.traineddata">
+      <None Update="Data\tessdata\eng.traineddata">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

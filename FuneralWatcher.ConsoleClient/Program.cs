@@ -17,6 +17,7 @@ kernel.Bind<IConfigurationRepository>().To<ConfigurationRepository>().InSingleto
 
 var workflow = kernel.Get<IScanner>();
 var resultProcess = kernel.Get<IResultProcessor>();
+var logger = kernel.Get<ILogger>();
 workflow.PatternMatchingFlankDetected += (sender, eventArgs) =>
 {
     if (eventArgs.NewDetection)
@@ -30,4 +31,12 @@ workflow.PatternMatchingFlankDetected += (sender, eventArgs) =>
     }
 };
 
-workflow.Run();
+try
+{
+    workflow.Run();
+
+}
+catch (Exception ex)
+{
+    logger.Error(ex.Message);
+}
