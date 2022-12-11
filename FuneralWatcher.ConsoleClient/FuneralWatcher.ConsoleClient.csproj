@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ninject" Version="4.0.0-beta.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic\FuneralWatcher.Logic.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Workflows\FuneralWatcher.Workflows.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="SampleData" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="SampleData\sample_00.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="SampleData\sample_01.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="SampleData\sample_02.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="tessdata\eng.traineddata">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>
