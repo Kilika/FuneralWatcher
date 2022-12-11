@@ -3,20 +3,21 @@ using System.Drawing.Imaging;
 using System.IO.Enumeration;
 using Microsoft.VisualBasic.CompilerServices;
 using FuneralWatcher.Logic.Contract;
+using FuneralWatcher.Settings;
 
 namespace FuneralWatcher.Logic;
 
 public class FileResultProcessor : IResultProcessor
 {
-    // TODO: Config
-    private string _fileName = "MyDeaths";
+    private string _fileName;
     private string _resultDir = "Result\\"; 
 
     private ILogger _logger;
 
-    public FileResultProcessor(ILogger logger)
+    public FileResultProcessor(ILogger logger, IConfiguration config)
     {
         _logger = logger;
+        _fileName = config.Get("ImageSettings", "CounterFileName", "MyDeaths.txt");
     }
 
     public void Process()
@@ -24,7 +25,7 @@ public class FileResultProcessor : IResultProcessor
         if (!Directory.Exists(_resultDir))
             Directory.CreateDirectory(_resultDir);
         
-        var fileName = $"{_resultDir}{_fileName}.txt";
+        var fileName = $"{_resultDir}{_fileName}";
         if (!File.Exists(fileName))
         {
             File.Create(fileName);

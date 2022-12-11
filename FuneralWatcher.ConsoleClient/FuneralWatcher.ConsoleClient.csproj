@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic\FuneralWatcher.Logic.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Settings\FuneralWatcher.Settings.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Workflows\FuneralWatcher.Workflows.csproj" />
     </ItemGroup>
 

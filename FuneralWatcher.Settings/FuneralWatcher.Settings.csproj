@@ -4,11 +4,6 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>FuneralWatcher.CrossCutting</RootNamespace>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\FuneralWatcher.Settings\FuneralWatcher.Settings.csproj" />
-    </ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@
 using System.Drawing;
 using FuneralWatcher.CrossCutting;
 using FuneralWatcher.Logic.Contract;
+using FuneralWatcher.Settings;
 
 namespace FuneralWatcher.Workflows
 {
@@ -9,17 +10,24 @@ namespace FuneralWatcher.Workflows
     {
         public event EventHandler<FlankChangeDetected>? PatternMatchingFlankDetected;
         
-        private IImageProcessor _imageProcessor;
-        private IResultProcessor _resultProcessor;
-        private IImageInterpreter _imageInterpreter;
-        private IImageProvider _imageProvider;
+        private readonly IImageProcessor _imageProcessor;
+        private readonly IResultProcessor _resultProcessor;
+        private readonly IImageInterpreter _imageInterpreter;
+        private readonly IImageProvider _imageProvider;
+        private readonly IConfiguration _configuration;
         private bool _found = false;
         
-        public DevScanner(IImageProcessor imageProcessor, IResultProcessor resultProcessor, IImageInterpreter imageInterpreter, IImageProvider imageProvider)
+        public DevScanner(
+            IImageProcessor imageProcessor, 
+            IResultProcessor resultProcessor, 
+            IImageInterpreter imageInterpreter,
+            IImageProvider imageProvider,
+            IConfiguration configuration)
         {
             _imageProcessor = imageProcessor;
             _imageInterpreter = imageInterpreter;
             _imageProvider = imageProvider;
+            _configuration = configuration;
             _resultProcessor = resultProcessor;
         }
 
@@ -37,7 +45,7 @@ namespace FuneralWatcher.Workflows
                     _found = found;
                     PatternMatchingFlankDetected?.Invoke(this, new FlankChangeDetected(found));
                 } 
-                Thread.Sleep(2000); // TODO: Config
+                Thread.Sleep(_configuration.Get("ImageSettings","ScreenshotInterval", 1000));
             }
         }
 

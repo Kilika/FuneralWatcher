@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.Contra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.ConsoleClient", "FuneralWatcher.ConsoleClient\FuneralWatcher.ConsoleClient.csproj", "{81207BE1-8C14-4CC4-8311-7B49268E9B33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Settings", "FuneralWatcher.Settings\FuneralWatcher.Settings.csproj", "{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{81207BE1-8C14-4CC4-8311-7B49268E9B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81207BE1-8C14-4CC4-8311-7B49268E9B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81207BE1-8C14-4CC4-8311-7B49268E9B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{1445CEA7-E32F-40F9-812E-FD42D09563B9} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{071B735E-03A6-4DED-A5F9-5C30DFEF4361} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{81207BE1-8C14-4CC4-8311-7B49268E9B33} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
+		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F932CEFE-89C6-4BDF-AA9A-254020BA2148}
