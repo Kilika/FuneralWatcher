@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO.Enumeration;
+using FuneralWatcher.Logging.Contract;
 using Microsoft.VisualBasic.CompilerServices;
 using FuneralWatcher.Logic.Contract;
 using FuneralWatcher.Settings;
@@ -44,7 +45,7 @@ public class FileResultProcessor : IResultProcessor
         {
             File.Copy(_file, string.Concat(_file, ".bu"),true);
             _deathCounter = 0;
-            File.WriteAllText(_file, 0.ToString());
+            File.WriteAllText(_file, "0");
         }
     }
 

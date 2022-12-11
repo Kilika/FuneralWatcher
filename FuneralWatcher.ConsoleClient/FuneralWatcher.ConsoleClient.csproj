@@ -12,8 +12,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
-      <ProjectReference Include="..\FuneralWatcher.Logic\FuneralWatcher.Logic.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logging.ConsoleLogger\FuneralWatcher.Logging.ConsoleLogger.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.FileResultProcessor\FuneralWatcher.Logic.FileResultProcessor.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.ImageProcessor\FuneralWatcher.Logic.ImageProcessor.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.TessImageInterpreter\FuneralWatcher.Logic.TessImageInterpreter.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.WindowsScreenCastImageProvider\FuneralWatcher.Logic.WindowsScreenCastImageProvider.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Settings\FuneralWatcher.Settings.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Workflows\FuneralWatcher.Workflows.csproj" />
     </ItemGroup>
@@ -33,6 +36,9 @@
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
       <None Update="Data\tessdata\eng.traineddata">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\tessdata\deu.traineddata">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

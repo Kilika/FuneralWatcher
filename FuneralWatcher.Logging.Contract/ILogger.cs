@@ -1,4 +1,4 @@
-﻿namespace FuneralWatcher.Logic.Contract;
+﻿namespace FuneralWatcher.Logging.Contract;
 
 public interface ILogger
 {

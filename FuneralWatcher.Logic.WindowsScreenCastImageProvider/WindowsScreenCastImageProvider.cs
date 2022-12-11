@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using FuneralWatcher.Logic.Contract;
 
-namespace FuneralWatcher.Logic;
+namespace FuneralWatcher.Logic.WindowsScreenCastImageProvider;
 
 public sealed class WindowsScreenCastImageProvider : IImageProvider
 {

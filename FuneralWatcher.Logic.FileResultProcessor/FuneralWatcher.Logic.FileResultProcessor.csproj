@@ -8,13 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\FuneralWatcher.Logging.Contract\FuneralWatcher.Logging.Contract.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Settings\FuneralWatcher.Settings.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-      <PackageReference Include="Tesseract" Version="5.2.0" />
-      <PackageReference Include="Tesseract.Drawing" Version="5.2.0" />
     </ItemGroup>
 </Project>

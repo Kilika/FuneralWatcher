@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FuneralWatcher.Logging.Contract\FuneralWatcher.Logging.Contract.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Tesseract.Drawing" Version="5.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="C:\Users\tinot\.nuget\packages\tesseract\5.2.0\x64\leptonica-1.82.0.dll">
+        <Link>x64\leptonica-1.82.0.dll</Link>
+      </None>
+      <None Include="C:\Users\tinot\.nuget\packages\tesseract\5.2.0\x64\tesseract50.dll">
+        <Link>x64\tesseract50.dll</Link>
+      </None>
+      <None Include="C:\Users\tinot\.nuget\packages\tesseract\5.2.0\x86\leptonica-1.82.0.dll">
+        <Link>x86\leptonica-1.82.0.dll</Link>
+      </None>
+      <None Include="C:\Users\tinot\.nuget\packages\tesseract\5.2.0\x86\tesseract50.dll">
+        <Link>x86\tesseract50.dll</Link>
+      </None>
+    </ItemGroup>
+
+</Project>

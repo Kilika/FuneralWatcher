@@ -1,6 +1,6 @@
-﻿using FuneralWatcher.Logic.Contract;
+﻿using FuneralWatcher.Logging.Contract;
 
-namespace FuneralWatcher.Logic;
+namespace FuneralWatcher.Logging.ConsoleLogger;
 
 public sealed class ConsoleLogger : ILogger
 {

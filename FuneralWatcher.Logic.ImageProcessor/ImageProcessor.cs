@@ -1,7 +1,8 @@
 ﻿using System.Drawing;
+using System.Net.Mime;
 using FuneralWatcher.Logic.Contract;
 
-namespace FuneralWatcher.Logic;
+namespace FuneralWatcher.Logic.ImageProcessor;
 
 public sealed class ImageProcessor : IImageProcessor
 {
@@ -30,11 +31,13 @@ public sealed class ImageProcessor : IImageProcessor
     private Rectangle CalculateCenterRectangle(Image img)
     {
         var originSize = img.Size;
-        var cornerX = originSize.Width / 100 * 30;
+        // var cornerX = originSize.Width / 100 * 30;
+        var cornerX = 5;
         var cornerY = originSize.Height / 100 * 45;
-        var sizeX = originSize.Width / 100 * 42;
+        // var sizeX = originSize.Width / 100 * 42;
+        var sizeX = 1910;
         var sizeY = originSize.Height / 100 * 25;
-        
+
         Point corner = new Point(cornerX, cornerY);         // left upper corner: (x:26%, y:40%)
         Size size = new Size(sizeX, sizeY);                 // width: 48% , height: 10 %
         

@@ -1,11 +1,16 @@
-﻿using Ninject;
+﻿using FuneralWatcher.Logging.ConsoleLogger;
+using FuneralWatcher.Logging.Contract;
 using FuneralWatcher.Logic;
 using FuneralWatcher.Logic.Contract;
+using FuneralWatcher.Logic.ImageProcessor;
+using FuneralWatcher.Logic.TessImageInterpreter;
+using FuneralWatcher.Logic.WindowsScreenCastImageProvider;
 using FuneralWatcher.Settings;
 using FuneralWatcher.Workflows;
+using Ninject;
 
 IKernel kernel = new StandardKernel();
-kernel.Bind<IImageInterpreter>().To<ImageInterpreter>();
+kernel.Bind<IImageInterpreter>().To<TessImageInterpreter>();
 kernel.Bind<IImageProcessor>().To<ImageProcessor>();
 kernel.Bind<IScanner>().To<DevScanner>();
 kernel.Bind<IResultProcessor>().To<FileResultProcessor>();
