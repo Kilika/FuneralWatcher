@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Workflows", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.CrossCutting", "FuneralWatcher.CrossCutting\FuneralWatcher.CrossCutting.csproj", "{1445CEA7-E32F-40F9-812E-FD42D09563B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.Contract", "FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj", "{071B735E-03A6-4DED-A5F9-5C30DFEF4361}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.Contracts", "FuneralWatcher.Logic.Contracts\FuneralWatcher.Logic.Contracts.csproj", "{071B735E-03A6-4DED-A5F9-5C30DFEF4361}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.ConsoleClient", "FuneralWatcher.ConsoleClient\FuneralWatcher.ConsoleClient.csproj", "{81207BE1-8C14-4CC4-8311-7B49268E9B33}"
 EndProject
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Configuratio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuneralWatcher.Logic", "FuneralWatcher.Logic", "{A15CAD58-0929-422D-82CE-9EBA3FBDD236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.ImageProcessor", "FuneralWatcher.Logic.ImageProcessor\FuneralWatcher.Logic.ImageProcessor.csproj", "{388B84B7-1179-4D73-A603-E884E30346CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.BasicImageRecognizer", "FuneralWatcher.Logic.BasicImageRecognizer\FuneralWatcher.Logic.BasicImageRecognizer.csproj", "{388B84B7-1179-4D73-A603-E884E30346CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.TessImageInterpreter", "FuneralWatcher.Logic.TessImageInterpreter\FuneralWatcher.Logic.TessImageInterpreter.csproj", "{C6A9DA93-FCB2-4B2C-817A-AA0BA98D5EBD}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.WindowsScreenCastImageProvider", "FuneralWatcher.Logic.WindowsScreenCastImageProvider\FuneralWatcher.Logic.WindowsScreenCastImageProvider.csproj", "{EB86DBC7-773E-45D4-8A6A-20351B314682}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.EmguImageInterpreter", "FuneralWatcher.Logic.EmguImageInterpreter\FuneralWatcher.Logic.EmguImageInterpreter.csproj", "{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.BasicImageEditor", "FuneralWatcher.Logic.BasicImageEditor\FuneralWatcher.Logic.BasicImageEditor.csproj", "{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +89,10 @@ Global
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,7 +101,6 @@ Global
 		{32E75AD7-F506-4575-9A7D-42254AC0590A} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{1445CEA7-E32F-40F9-812E-FD42D09563B9} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{071B735E-03A6-4DED-A5F9-5C30DFEF4361} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
-		{81207BE1-8C14-4CC4-8311-7B49268E9B33} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{A15CAD58-0929-422D-82CE-9EBA3FBDD236} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{7CD40DDE-4DD7-4850-969C-1BB35866065D} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
@@ -103,6 +110,9 @@ Global
 		{FCB5E91C-4554-469A-8E8C-3FCEC5A9E44E} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{EB86DBC7-773E-45D4-8A6A-20351B314682} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
+		{6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
+		{81207BE1-8C14-4CC4-8311-7B49268E9B33} = {6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3}
+		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F932CEFE-89C6-4BDF-AA9A-254020BA2148}

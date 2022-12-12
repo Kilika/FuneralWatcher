@@ -4,10 +4,11 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>FuneralWatcher.Logic.ImageRecognizer</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.Contracts\FuneralWatcher.Logic.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

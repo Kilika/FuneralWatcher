@@ -2,8 +2,9 @@
 using FuneralWatcher.Logging.ConsoleLogger;
 using FuneralWatcher.Logging.Contract;
 using FuneralWatcher.Logic;
-using FuneralWatcher.Logic.Contract;
-using FuneralWatcher.Logic.ImageProcessor;
+using FuneralWatcher.Logic.BasicImageEditor;
+using FuneralWatcher.Logic.Contracts;
+using FuneralWatcher.Logic.EmguImageInterpreter;
 using FuneralWatcher.Logic.TessImageInterpreter;
 using FuneralWatcher.Logic.WindowsScreenCastImageProvider;
 using FuneralWatcher.Workflows;
@@ -11,16 +12,17 @@ using Ninject;
 
 IKernel kernel = new StandardKernel();
 kernel.Bind<IImageInterpreter>().To<TessImageInterpreter>();
-kernel.Bind<IImageProcessor>().To<ImageProcessor>();
-kernel.Bind<IScanner>().To<DevScanner>();
+kernel.Bind<IImageRecognizer>().To<EmguImageRecognizer>();
+kernel.Bind<IWorkflow>().To<ImageEmguWorkflow>();
 kernel.Bind<IResultProcessor>().To<FileResultProcessor>();
+kernel.Bind<IImageEditor>().To<BasicImageEditor>();
 kernel.Bind<IImageProvider>().To<WindowsScreenCastImageProvider>();
 
-kernel.Bind<ILogger>().To<ConsoleLogger>();
+kernel.Bind<ILogger>().To<ConsoleLogger>().InSingletonScope();
 kernel.Bind<IConfiguration>().To<Configuration>().InSingletonScope();
 kernel.Bind<IConfigurationRepository>().To<ConfigurationRepository>().InSingletonScope();
 
-var workflow = kernel.Get<IScanner>();
+var workflow = kernel.Get<IWorkflow>();
 var resultProcess = kernel.Get<IResultProcessor>();
 var logger = kernel.Get<ILogger>();
 workflow.PatternMatchingFlankDetected += (sender, eventArgs) =>
@@ -39,7 +41,6 @@ workflow.PatternMatchingFlankDetected += (sender, eventArgs) =>
 try
 {
     workflow.Run();
-
 }
 catch (Exception ex)
 {

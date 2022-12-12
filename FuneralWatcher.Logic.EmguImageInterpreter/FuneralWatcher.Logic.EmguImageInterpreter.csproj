@@ -10,12 +10,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FuneralWatcher.Logging.Contract\FuneralWatcher.Logging.Contract.csproj" />
-      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.Contracts\FuneralWatcher.Logic.Contracts.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Configuration\FuneralWatcher.Configuration.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Emgu.CV" Version="4.6.0.5131" />
+      <PackageReference Include="Emgu.CV.runtime.windows" Version="4.6.0.5131" />
     </ItemGroup>
 
 </Project>

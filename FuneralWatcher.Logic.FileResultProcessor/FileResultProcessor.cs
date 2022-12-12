@@ -3,8 +3,8 @@ using System.Drawing.Imaging;
 using System.IO.Enumeration;
 using FuneralWatcher.Configuration;
 using FuneralWatcher.Logging.Contract;
+using FuneralWatcher.Logic.Contracts;
 using Microsoft.VisualBasic.CompilerServices;
-using FuneralWatcher.Logic.Contract;
 
 namespace FuneralWatcher.Logic;
 

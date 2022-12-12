@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FuneralWatcher.Logging.Contract\FuneralWatcher.Logging.Contract.csproj" />
-      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.Contracts\FuneralWatcher.Logic.Contracts.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Configuration\FuneralWatcher.Configuration.csproj" />
     </ItemGroup>
 

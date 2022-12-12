@@ -2,35 +2,35 @@
 using System.Drawing;
 using FuneralWatcher.Configuration;
 using FuneralWatcher.CrossCutting;
-using FuneralWatcher.Logic.Contract;
+using FuneralWatcher.Logic.Contracts;
 
 namespace FuneralWatcher.Workflows
 {
-    public sealed class DevScanner : IScanner
+    public sealed class DevWorkflow : IWorkflow
     {
         public event EventHandler<FlankChangeDetected>? PatternMatchingFlankDetected;
 
-        private readonly IImageProcessor _imageProcessor;
-        private readonly IResultProcessor _resultProcessor;
+        private readonly IImageRecognizer _imageRecognizer;
         private readonly IImageInterpreter _imageInterpreter;
         private readonly IImageProvider _imageProvider;
-        private readonly IConfiguration _configuration;
+        private readonly IImageEditor _editor;
 
-        private int _scanInterval;
-        public string _searchPattern;
-        private bool _found = false;
+        private readonly int _scanInterval;
+        private readonly string _searchPattern;
         
-        public DevScanner(
-            IImageProcessor imageProcessor,
-            IResultProcessor resultProcessor,
+        private  bool _found = false;
+        
+        public DevWorkflow(
+            IImageRecognizer imageRecognizer,
             IImageInterpreter imageInterpreter,
             IImageProvider imageProvider,
-            IConfiguration configuration)
+            IConfiguration configuration, 
+            IImageEditor editor)
         {
-            _imageProcessor = imageProcessor;
+            _imageRecognizer = imageRecognizer;
             _imageInterpreter = imageInterpreter;
             _imageProvider = imageProvider;
-            _resultProcessor = resultProcessor;
+            _editor = editor;
             _scanInterval = configuration.Get("ImageSettings", "ScreenshotInterval", 1000);
             _searchPattern = configuration.Get("ImageSettings", "Pattern", "YOU DIED");
         }
@@ -43,7 +43,7 @@ namespace FuneralWatcher.Workflows
                 try
                 {
                     var image = _imageProvider.GetImage();
-                    var cropped = _imageProcessor.GetCroppedImage(image);
+                    var cropped = _editor.CropImage(image, _imageRecognizer.GetRelevantReadSection(image));
                     var found = _imageInterpreter.ImageContainsPattern(cropped, _searchPattern);
                     if (_found != found)
                     {

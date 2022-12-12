@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 using FuneralWatcher.Logging.Contract;
-using FuneralWatcher.Logic.Contract;
+using FuneralWatcher.Logic.Contracts;
 using Tesseract;
 
 namespace FuneralWatcher.Logic.TessImageInterpreter;

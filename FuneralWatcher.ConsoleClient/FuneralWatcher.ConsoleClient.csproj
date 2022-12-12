@@ -5,6 +5,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>FuneralWatcher.Clients.ConsoleClient</AssemblyName>
+        <RootNamespace>FuneralWatcher.Clients.ConsoleClient</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,8 +15,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FuneralWatcher.Logging.ConsoleLogger\FuneralWatcher.Logging.ConsoleLogger.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.BasicImageEditor\FuneralWatcher.Logic.BasicImageEditor.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.EmguImageInterpreter\FuneralWatcher.Logic.EmguImageInterpreter.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic.FileResultProcessor\FuneralWatcher.Logic.FileResultProcessor.csproj" />
-      <ProjectReference Include="..\FuneralWatcher.Logic.ImageProcessor\FuneralWatcher.Logic.ImageProcessor.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.BasicImageRecognizer\FuneralWatcher.Logic.BasicImageRecognizer.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic.TessImageInterpreter\FuneralWatcher.Logic.TessImageInterpreter.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Logic.WindowsScreenCastImageProvider\FuneralWatcher.Logic.WindowsScreenCastImageProvider.csproj" />
       <ProjectReference Include="..\FuneralWatcher.Configuration\FuneralWatcher.Configuration.csproj" />

@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FuneralWatcher.CrossCutting\FuneralWatcher.CrossCutting.csproj" />
-      <ProjectReference Include="..\FuneralWatcher.Logic.Contract\FuneralWatcher.Logic.Contract.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.Contracts\FuneralWatcher.Logic.Contracts.csproj" />
     </ItemGroup>
 
     <ItemGroup>

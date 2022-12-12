@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using FuneralWatcher.Logic.Contract;
+using FuneralWatcher.Logic.Contracts;
 
 namespace FuneralWatcher.Logic.WindowsScreenCastImageProvider;
 
