@@ -4,7 +4,7 @@ namespace FuneralWatcher.Workflows
 {
     public interface IWorkflow
     {
-        event EventHandler<FlankChangeDetected> PatternMatchingFlankDetected;
+        event EventHandler<FlankChangeDetected> PatternMatchingFlankChangeDetected;
         Task Run();
     }
 }

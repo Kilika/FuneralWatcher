@@ -11,22 +11,15 @@ using FuneralWatcher.Workflows;
 using Ninject;
 
 IKernel kernel = new StandardKernel();
-kernel.Bind<IImageInterpreter>().To<TessImageInterpreter>();
-kernel.Bind<IImageRecognizer>().To<EmguImageRecognizer>();
-kernel.Bind<IWorkflow>().To<ImageEmguWorkflow>();
-kernel.Bind<IResultProcessor>().To<FileResultProcessor>();
-kernel.Bind<IImageEditor>().To<BasicImageEditor>();
-kernel.Bind<IImageProvider>().To<WindowsScreenCastImageProvider>();
-
-kernel.Bind<ILogger>().To<ConsoleLogger>().InSingletonScope();
-kernel.Bind<IConfiguration>().To<Configuration>().InSingletonScope();
-kernel.Bind<IConfigurationRepository>().To<ConfigurationRepository>().InSingletonScope();
+InitializeBindings(kernel);
 
 var workflow = kernel.Get<IWorkflow>();
 var resultProcess = kernel.Get<IResultProcessor>();
 var logger = kernel.Get<ILogger>();
-workflow.PatternMatchingFlankDetected += (sender, eventArgs) =>
-{
+
+
+// Define Handler
+workflow.PatternMatchingFlankChangeDetected += (sender, eventArgs) => {
     if (eventArgs.NewDetection)
     {
         Console.WriteLine("Dead detected");
@@ -46,3 +39,18 @@ catch (Exception ex)
 {
     logger.Error(ex.Message);
 }
+
+void InitializeBindings(IKernel kernel1)
+{
+    kernel1.Bind<ILogger>().To<ConsoleLogger>().InSingletonScope();
+    kernel1.Bind<IConfiguration>().To<Configuration>().InSingletonScope();
+    kernel1.Bind<IConfigurationRepository>().To<ConfigurationRepository>().InSingletonScope();
+
+    kernel1.Bind<IWorkflow>().To<ImageEmguWorkflow>();
+    kernel1.Bind<IImageProvider>().To<WindowsScreenCastImageProvider>();
+    kernel1.Bind<IImageRecognizer>().To<EmguImageRecognizer>();
+    kernel1.Bind<IImageEditor>().To<BasicImageEditor>();
+    kernel1.Bind<IImageInterpreter>().To<TessImageInterpreter>();
+    kernel1.Bind<IResultProcessor>().To<FileResultProcessor>();
+}
+

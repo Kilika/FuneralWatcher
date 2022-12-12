@@ -5,7 +5,7 @@ namespace FuneralWatcher.Workflows;
 
 public class ImageEmguWorkflow : IWorkflow
 {
-    public event EventHandler<FlankChangeDetected>? PatternMatchingFlankDetected;
+    public event EventHandler<FlankChangeDetected>? PatternMatchingFlankChangeDetected;
     private readonly IImageProvider _imageProvider;
     private readonly IImageRecognizer _imageRecognizer;
 

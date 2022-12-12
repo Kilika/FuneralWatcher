@@ -8,7 +8,7 @@ namespace FuneralWatcher.Workflows
 {
     public sealed class DevWorkflow : IWorkflow
     {
-        public event EventHandler<FlankChangeDetected>? PatternMatchingFlankDetected;
+        public event EventHandler<FlankChangeDetected>? PatternMatchingFlankChangeDetected;
 
         private readonly IImageRecognizer _imageRecognizer;
         private readonly IImageInterpreter _imageInterpreter;
@@ -35,20 +35,20 @@ namespace FuneralWatcher.Workflows
             _searchPattern = configuration.Get("ImageSettings", "Pattern", "YOU DIED");
         }
 
-        public async Task Run()
+        public Task Run()
         {
-            //CancellationToken cancelToken = new CancellationToken();
             while (true)
             {
                 try
                 {
                     var image = _imageProvider.GetImage();
-                    var cropped = _editor.CropImage(image, _imageRecognizer.GetRelevantReadSection(image));
-                    var found = _imageInterpreter.ImageContainsPattern(cropped, _searchPattern);
+                    var croppingSection = _imageRecognizer.GetRelevantReadSection(image);
+                    var croppedImage = _editor.CropImage(image, croppingSection);
+                    var found = _imageInterpreter.ImageContainsPattern(croppedImage, _searchPattern);
                     if (_found != found)
                     {
                         _found = found;
-                        PatternMatchingFlankDetected?.Invoke(this, new FlankChangeDetected(found));
+                        PatternMatchingFlankChangeDetected?.Invoke(this, new FlankChangeDetected(found));
                     }
                 }
                 catch (Exception ex)
@@ -58,6 +58,7 @@ namespace FuneralWatcher.Workflows
                 
                 Thread.Sleep(_scanInterval);
             }
+            return Task.CompletedTask;
         }
     }
 }
