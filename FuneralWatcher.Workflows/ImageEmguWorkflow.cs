@@ -8,7 +8,7 @@ public class ImageEmguWorkflow : IWorkflow
     public event EventHandler<FlankChangeDetected>? PatternMatchingFlankChangeDetected;
     private readonly IImageProvider _imageProvider;
     private readonly IImageRecognizer _imageRecognizer;
-
+    
     public ImageEmguWorkflow(IImageProvider imageProvider, IImageRecognizer imageRecognizer)
     {
         _imageProvider = imageProvider;

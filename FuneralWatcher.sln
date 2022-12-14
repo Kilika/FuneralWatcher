@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{6DBE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.BasicImageEditor", "FuneralWatcher.Logic.BasicImageEditor\FuneralWatcher.Logic.BasicImageEditor.csproj", "{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuneralWatcher.Tooling", "FuneralWatcher.Tooling", "{7574FA94-C8AB-43D5-94B6-F000355846D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funeral.Checker", "Funeral.Checker\Funeral.Checker.csproj", "{16C63961-F712-4FDB-9EFA-95BA2C2CF758}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,10 @@ Global
 		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +121,7 @@ Global
 		{6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{81207BE1-8C14-4CC4-8311-7B49268E9B33} = {6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3}
 		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
+		{16C63961-F712-4FDB-9EFA-95BA2C2CF758} = {7574FA94-C8AB-43D5-94B6-F000355846D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F932CEFE-89C6-4BDF-AA9A-254020BA2148}
