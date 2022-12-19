@@ -33,7 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FuneralWatcher.Logic.EmguImageInterpreter\FuneralWatcher.Logic.EmguImageInterpreter.csproj" />
+      <ProjectReference Include="..\FuneralWatcher.Logic.EmguImageRecognizer\FuneralWatcher.Logic.EmguImageRecognizer.csproj" />
     </ItemGroup>
 
 </Project>

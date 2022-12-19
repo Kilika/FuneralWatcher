@@ -1,10 +1,7 @@
 ﻿using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO.Enumeration;
 using FuneralWatcher.Configuration;
 using FuneralWatcher.Logging.Contract;
 using FuneralWatcher.Logic.Contracts;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace FuneralWatcher.Logic;
 
@@ -54,5 +51,10 @@ public class FileResultProcessor : IResultProcessor
     {
         _deathCounter++;
         File.WriteAllText(_file, _deathCounter.ToString());
+    }
+
+    public void WriteImageToFilesystem(Image Img, string Name)
+    {
+        Img.Save(_resultDir+Name);
     }
 }

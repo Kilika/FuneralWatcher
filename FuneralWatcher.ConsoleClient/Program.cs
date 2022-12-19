@@ -1,10 +1,11 @@
-﻿using FuneralWatcher.Configuration;
+﻿using System.Drawing;
+using FuneralWatcher.Configuration;
 using FuneralWatcher.Logging.ConsoleLogger;
 using FuneralWatcher.Logging.Contract;
 using FuneralWatcher.Logic;
-using FuneralWatcher.Logic.BasicImageEditor;
 using FuneralWatcher.Logic.Contracts;
 using FuneralWatcher.Logic.EmguImageInterpreter;
+using FuneralWatcher.Logic.StaticImageProvider;
 using FuneralWatcher.Logic.TessImageInterpreter;
 using FuneralWatcher.Logic.WindowsScreenCastImageProvider;
 using FuneralWatcher.Workflows;
@@ -46,10 +47,9 @@ void InitializeBindings(IKernel kernel1)
     kernel1.Bind<IConfiguration>().To<Configuration>().InSingletonScope();
     kernel1.Bind<IConfigurationRepository>().To<ConfigurationRepository>().InSingletonScope();
 
-    kernel1.Bind<IWorkflow>().To<ImageEmguWorkflow>();
-    kernel1.Bind<IImageProvider>().To<WindowsScreenCastImageProvider>();
-    kernel1.Bind<IImageRecognizer>().To<EmguImageRecognizer>();
-    kernel1.Bind<IImageEditor>().To<BasicImageEditor>();
+    kernel1.Bind<IWorkflow>().To<DevWorkflow>();
+    kernel1.Bind<IImageProvider>().To<StaticImageProvider>();
+    kernel1.Bind<IImageRecognizer>().To<DeadScreenRecognition>();
     kernel1.Bind<IImageInterpreter>().To<TessImageInterpreter>();
     kernel1.Bind<IResultProcessor>().To<FileResultProcessor>();
 }

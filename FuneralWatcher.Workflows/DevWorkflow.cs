@@ -13,8 +13,8 @@ namespace FuneralWatcher.Workflows
         private readonly IImageRecognizer _imageRecognizer;
         private readonly IImageInterpreter _imageInterpreter;
         private readonly IImageProvider _imageProvider;
-        private readonly IImageEditor _editor;
-
+        private readonly IResultProcessor _resultProcessor;
+        
         private readonly int _scanInterval;
         private readonly string _searchPattern;
         
@@ -25,12 +25,13 @@ namespace FuneralWatcher.Workflows
             IImageInterpreter imageInterpreter,
             IImageProvider imageProvider,
             IConfiguration configuration, 
-            IImageEditor editor)
+            IResultProcessor resultProcessor) 
+            
         {
             _imageRecognizer = imageRecognizer;
             _imageInterpreter = imageInterpreter;
             _imageProvider = imageProvider;
-            _editor = editor;
+            _resultProcessor = resultProcessor;
             _scanInterval = configuration.Get("ImageSettings", "ScreenshotInterval", 1000);
             _searchPattern = configuration.Get("ImageSettings", "Pattern", "YOU DIED");
         }
@@ -42,9 +43,10 @@ namespace FuneralWatcher.Workflows
                 try
                 {
                     var image = _imageProvider.GetImage();
-                    var croppingSection = _imageRecognizer.GetRelevantReadSection(image);
-                    var croppedImage = _editor.CropImage(image, croppingSection);
-                    var found = _imageInterpreter.ImageContainsPattern(croppedImage, _searchPattern);
+                    _resultProcessor.WriteImageToFilesystem(image, "origin.png");
+                    var relevantImage = _imageRecognizer.ReduceImageToRelevant(image);
+                    _resultProcessor.WriteImageToFilesystem(relevantImage, "merge.png");
+                    var found = _imageInterpreter.ImageContainsPattern(relevantImage, _searchPattern);
                     if (_found != found)
                     {
                         _found = found;

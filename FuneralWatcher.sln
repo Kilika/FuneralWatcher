@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Configuratio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuneralWatcher.Logic", "FuneralWatcher.Logic", "{A15CAD58-0929-422D-82CE-9EBA3FBDD236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.BasicImageRecognizer", "FuneralWatcher.Logic.BasicImageRecognizer\FuneralWatcher.Logic.BasicImageRecognizer.csproj", "{388B84B7-1179-4D73-A603-E884E30346CF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.TessImageInterpreter", "FuneralWatcher.Logic.TessImageInterpreter\FuneralWatcher.Logic.TessImageInterpreter.csproj", "{C6A9DA93-FCB2-4B2C-817A-AA0BA98D5EBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logging.ConsoleLogger", "FuneralWatcher.Logging.ConsoleLogger\FuneralWatcher.Logging.ConsoleLogger.csproj", "{F957CB05-D4E1-4315-92CF-2CF82A69ACFC}"
@@ -29,15 +27,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logging.Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.WindowsScreenCastImageProvider", "FuneralWatcher.Logic.WindowsScreenCastImageProvider\FuneralWatcher.Logic.WindowsScreenCastImageProvider.csproj", "{EB86DBC7-773E-45D4-8A6A-20351B314682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.EmguImageInterpreter", "FuneralWatcher.Logic.EmguImageInterpreter\FuneralWatcher.Logic.EmguImageInterpreter.csproj", "{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.EmguImageRecognizer", "FuneralWatcher.Logic.EmguImageRecognizer\FuneralWatcher.Logic.EmguImageRecognizer.csproj", "{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.BasicImageEditor", "FuneralWatcher.Logic.BasicImageEditor\FuneralWatcher.Logic.BasicImageEditor.csproj", "{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuneralWatcher.Tooling", "FuneralWatcher.Tooling", "{7574FA94-C8AB-43D5-94B6-F000355846D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funeral.Checker", "Funeral.Checker\Funeral.Checker.csproj", "{16C63961-F712-4FDB-9EFA-95BA2C2CF758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuneralWatcher.Logic.StaticImageProvider", "FuneralWatcher.Logic.StaticImageProvider\FuneralWatcher.Logic.StaticImageProvider.csproj", "{3391425A-95E9-4F95-A0D0-66E5998C5232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,10 +67,6 @@ Global
 		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{388B84B7-1179-4D73-A603-E884E30346CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{388B84B7-1179-4D73-A603-E884E30346CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{388B84B7-1179-4D73-A603-E884E30346CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{388B84B7-1179-4D73-A603-E884E30346CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C6A9DA93-FCB2-4B2C-817A-AA0BA98D5EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C6A9DA93-FCB2-4B2C-817A-AA0BA98D5EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6A9DA93-FCB2-4B2C-817A-AA0BA98D5EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,14 +87,14 @@ Global
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C63961-F712-4FDB-9EFA-95BA2C2CF758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3391425A-95E9-4F95-A0D0-66E5998C5232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3391425A-95E9-4F95-A0D0-66E5998C5232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3391425A-95E9-4F95-A0D0-66E5998C5232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3391425A-95E9-4F95-A0D0-66E5998C5232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,7 +106,6 @@ Global
 		{BFBDF88E-929D-4ADB-AAE8-F9220AAA29E9} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{A15CAD58-0929-422D-82CE-9EBA3FBDD236} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{7CD40DDE-4DD7-4850-969C-1BB35866065D} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
-		{388B84B7-1179-4D73-A603-E884E30346CF} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{C6A9DA93-FCB2-4B2C-817A-AA0BA98D5EBD} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{F957CB05-D4E1-4315-92CF-2CF82A69ACFC} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{FCB5E91C-4554-469A-8E8C-3FCEC5A9E44E} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
@@ -120,8 +113,8 @@ Global
 		{C75E2CC8-26EB-42FF-A411-D31BEF868DDE} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3} = {3F361A5D-2581-435F-868A-1C6215F38F6F}
 		{81207BE1-8C14-4CC4-8311-7B49268E9B33} = {6DBE177F-9A0D-4B1A-86FA-C99D1C3218F3}
-		{B4C0B53F-1DA9-482D-8AD2-5E4DAED96732} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 		{16C63961-F712-4FDB-9EFA-95BA2C2CF758} = {7574FA94-C8AB-43D5-94B6-F000355846D8}
+		{3391425A-95E9-4F95-A0D0-66E5998C5232} = {A15CAD58-0929-422D-82CE-9EBA3FBDD236}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F932CEFE-89C6-4BDF-AA9A-254020BA2148}

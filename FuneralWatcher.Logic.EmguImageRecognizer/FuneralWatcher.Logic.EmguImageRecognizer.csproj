@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>FuneralWatcher.Logic.EmguImageInterpreter</AssemblyName>
         <RootNamespace>FuneralWatcher.Logic.EmguImageInterpreter</RootNamespace>
+        <PackageId>FuneralWatcher.Logic.EmguImageRecognizer</PackageId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <PackageReference Include="Emgu.CV" Version="4.6.0.5131" />
+      <PackageReference Include="Emgu.CV.Bitmap" Version="4.6.0.5131" />
       <PackageReference Include="Emgu.CV.runtime.windows" Version="4.6.0.5131" />
     </ItemGroup>
 

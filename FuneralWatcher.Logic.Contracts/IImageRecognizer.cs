@@ -4,5 +4,5 @@ namespace FuneralWatcher.Logic.Contracts;
 
 public interface IImageRecognizer
 {
-    Rectangle GetRelevantReadSection(Image img);
+    Image ReduceImageToRelevant(Image img);
 }
