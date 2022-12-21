@@ -1,13 +1,10 @@
-﻿using Emgu.CV;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
 using FuneralWatcher.Logic.EmguImageInterpreter;
 using Microsoft.Win32;
 
@@ -25,15 +22,22 @@ namespace Funeral.Checker
         {
             InitializeComponent();
             
-            _emgu = new DeadScreenRecognition(); 
+            _emgu = new DeadScreenRecognition(null); 
             _input = Image.FromFile("Sample/Sample_01.png");   
         }
 
         private void ShowImage(Image image)
         {
+            var ofd = new OpenFileDialog();
+            ofd.Multiselect = false;
+            ofd.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg";
             
-            // _input = new Image<Bgr, byte>("Sample/Sample_02.png");
-            _input = Image.FromFile("Sample/Sample_01.png");
+            string filename = "Sample/Sample_01.png";
+            if (ofd.ShowDialog() == true)
+            {
+                filename = ofd.FileName;
+            }
+            _input = Image.FromFile(filename);
             var res = _emgu.ReduceImageToRelevant(_input);
             
             try

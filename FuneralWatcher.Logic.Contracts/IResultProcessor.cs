@@ -7,4 +7,6 @@ public interface IResultProcessor
     void Process();
 
     void WriteImageToFilesystem(Image Img, string Name);
+
+    string GetResultDir();
 }

@@ -20,7 +20,7 @@ var logger = kernel.Get<ILogger>();
 
 
 // Define Handler
-workflow.PatternMatchingFlankChangeDetected += (sender, eventArgs) => {
+workflow.PatternMatchingFlankChangeDetected += (_, eventArgs) => {
     if (eventArgs.NewDetection)
     {
         Console.WriteLine("Dead detected");

@@ -43,9 +43,7 @@ namespace FuneralWatcher.Workflows
                 try
                 {
                     var image = _imageProvider.GetImage();
-                    _resultProcessor.WriteImageToFilesystem(image, "origin.png");
                     var relevantImage = _imageRecognizer.ReduceImageToRelevant(image);
-                    _resultProcessor.WriteImageToFilesystem(relevantImage, "merge.png");
                     var found = _imageInterpreter.ImageContainsPattern(relevantImage, _searchPattern);
                     if (_found != found)
                     {
@@ -57,7 +55,7 @@ namespace FuneralWatcher.Workflows
                 {
                     Console.WriteLine(ex);
                 }
-                
+
                 Thread.Sleep(_scanInterval);
             }
             return Task.CompletedTask;

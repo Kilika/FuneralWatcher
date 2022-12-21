@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using Emgu.CV;
+using Emgu.CV.Ccm;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
@@ -11,13 +12,31 @@ namespace FuneralWatcher.Logic.EmguImageInterpreter;
 public class DeadScreenRecognition : IImageRecognizer
 {
     private Image<Bgra, byte> _inputArray;
-    
+    private readonly IResultProcessor _resultProcessor;
+    private string _emguDir = "emgu\\";
+    public DeadScreenRecognition(IResultProcessor resultProcessor)
+    {
+        _resultProcessor = resultProcessor;
+    }
+
     public Image ReduceImageToRelevant(Image img)
     {
         _inputArray = ConvertImageToInputArray((Bitmap)img);
         var recs = GetLetterRectangles(_inputArray);
         var resultImage = MutliplyImageWithSections(_inputArray, recs);
-        return resultImage.ToBitmap();
+        var asBitmap = Convert(resultImage).Convert<Gray, byte>().ToBitmap();
+        asBitmap.Save(_resultProcessor.GetResultDir() + _emguDir + "asBitmap.png");
+        return asBitmap;
+    }
+
+    private void ShowImageInWindows(Image<Bgra, byte> input)
+    {
+        var name = "yourThing";
+        CvInvoke.NamedWindow(name);
+        var matrix = input.Mat;
+        CvInvoke.Resize(matrix, matrix, new Size(640, 360));
+        CvInvoke.Imshow(name, matrix);
+        CvInvoke.WaitKey(0);
     }
 
     private Image<Bgra, byte> ConvertImageToInputArray(Bitmap inputImg)
@@ -38,6 +57,7 @@ public class DeadScreenRecognition : IImageRecognizer
             CvInvoke.Rectangle(outImage, r, new MCvScalar(0, 255, 255), -2);
         }
         outImage._And(inputImage);
+        //ShowImageInWindows(outImage);
         return outImage;
     }
     
@@ -57,12 +77,19 @@ public class DeadScreenRecognition : IImageRecognizer
         for (var i = 0; i < contour.Size; i++)
         {
             var rect = CvInvoke.BoundingRectangle(contour[i]);
-            if (rect.Height > 110) // letter high
+            if (rect.Height > 120) // letter high
             {
                 rectangles.Add(rect);
             }
         }
 
         return rectangles;
+    }
+
+    private Image<Bgr, byte> Convert(Image<Bgra, byte> input)
+    {
+        Image<Bgr, byte> converted = new Image<Bgr, byte>(input.Size);
+        CvInvoke.CvtColor(input, converted, ColorConversion.Bgra2Bgr);
+        return converted;
     }
 }
